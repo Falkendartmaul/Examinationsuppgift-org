@@ -1,0 +1,19 @@
+/* Lokala typsnitt för Tailwind-klassen font-sans. */
+
+@font-face {
+  font-family: "Selawik";
+  src: url("fonts/selawik-webfont.woff2") format("woff2"),
+    url("fonts/selawik-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Selawik";
+  src: url("fonts/selawkib-webfont.woff2") format("woff2"),
+    url("fonts/selawkib-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
