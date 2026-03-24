@@ -1,214 +1,394 @@
 <!doctype html>
 <html lang="sv">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Produktsida med cards och grid i Tailwind CSS." />
-  <title>Drop 1 | Produkter</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Tailwind-konfiguration: utökar standardens sans-stack med lokala Selawik. -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ["Selawik", "ui-sans-serif", "system-ui", "sans-serif"],
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Produktsida med cards och grid i Tailwind CSS."
+    />
+    <title>Drop 1 | Produkter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind-konfiguration: utökar standardens sans-stack med lokala Selawik. -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Selawik", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
           },
         },
-      },
-    };
-  </script>
-  <!-- Liten lokal CSS-fil som endast innehåller font-face-deklarationer. -->
-  <link rel="stylesheet" href="custom.css" />
-</head>
+      };
+    </script>
+    <!-- Liten lokal CSS-fil som endast innehåller font-face-deklarationer. -->
+    <link rel="stylesheet" href="custom.css" />
+  </head>
 
-<body class="bg-slate-50 font-sans text-slate-900">
-  <!-- Gemensam sidhuvud: kampanjrad, huvudmeny, logotyp och snabbikoner. -->
-  <header class="sticky top-0 z-50 border-b border-slate-800 bg-black text-white">
-  <div class="border-b border-white/10">
-    <div class="mx-auto max-w-6xl px-4 py-3 md:py-4">
-      <ul class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-200 sm:gap-6 sm:text-sm">
-        <li>Global frakt</li>
-        <li>Drop 1 nu live</li>
-        <li class="hidden sm:list-item">Fri frakt över 800 kr</li>
-        <li class="hidden sm:list-item">Köp 3 betala för 2</li>
-      </ul>
-    </div>
-  </div>
+  <body class="bg-slate-50 font-sans text-slate-900">
+    <!-- Gemensam sidhuvud: kampanjrad, huvudmeny, logotyp och snabbikoner. -->
+    <header
+      class="sticky top-0 z-50 border-b border-slate-800 bg-black text-white"
+    >
+      <div class="border-b border-white/10">
+        <div class="mx-auto max-w-6xl px-4 py-3 md:py-4">
+          <ul
+            class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-200 sm:gap-6 sm:text-sm"
+          >
+            <li>Global frakt</li>
+            <li>Drop 1 nu live</li>
+            <li class="hidden sm:list-item">Fri frakt över 800 kr</li>
+            <li class="hidden sm:list-item">Köp 3 betala för 2</li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-3 px-4 py-3 md:grid-cols-[1fr_auto_1fr] md:gap-2 md:py-4">
-    <div class="md:col-start-2 md:justify-self-center">
-      <a href="index.html">
-        <img src="images/logo.png" alt="Logotyp Anna Haraldsson" class="h-10 w-auto sm:h-12" />
-      </a>
-    </div>
+      <div
+        class="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-3 px-4 py-3 md:grid-cols-[1fr_auto_1fr] md:gap-2 md:py-4"
+      >
+        <div class="md:col-start-2 md:justify-self-center">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="Logotyp Anna Haraldsson"
+              class="h-10 w-auto sm:h-12"
+            />
+          </a>
+        </div>
 
-    <div class="flex items-center justify-self-end gap-2 md:col-start-3">
-      <button type="button" class="inline-flex items-center justify-center rounded-md border border-white/20 p-1.5 hover:bg-white/10">
-        <img src="images/icons/search.svg" alt="Sök" class="h-5 w-5" />
-      </button>
-      <button type="button" class="inline-flex items-center justify-center rounded-md border border-white/20 p-1.5 hover:bg-white/10">
-        <img src="images/icons/user.svg" alt="Konto" class="h-5 w-5" />
-      </button>
-      <button type="button" class="inline-flex items-center justify-center rounded-md border border-white/20 p-1.5 hover:bg-white/10">
-        <img src="images/icons/cart.svg" alt="Varukorg" class="h-5 w-5" />
-      </button>
-    </div>
+        <div class="flex items-center justify-self-end gap-2 md:col-start-3">
+          <button
+            type="button"
+            class="inline-flex items-center justify-center rounded-md border border-white/20 p-1.5 hover:bg-white/10"
+          >
+            <img src="images/icons/search.svg" alt="Sök" class="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            class="inline-flex items-center justify-center rounded-md border border-white/20 p-1.5 hover:bg-white/10"
+          >
+            <img src="images/icons/user.svg" alt="Konto" class="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            class="inline-flex items-center justify-center rounded-md border border-white/20 p-1.5 hover:bg-white/10"
+          >
+            <img src="images/icons/cart.svg" alt="Varukorg" class="h-5 w-5" />
+          </button>
+        </div>
 
-    <!-- Navigering byggd med flex + responsiva brytpunkter (md:...) från Tailwind. -->
-    <nav aria-label="Huvudmeny" class="col-span-2 md:col-span-1 md:col-start-1 md:row-start-1">
-      <div class="overflow-x-auto md:overflow-visible">
-        <ul class="flex flex-nowrap items-center gap-1 whitespace-nowrap text-xs uppercase tracking-wide sm:text-sm md:gap-2">
-          <li><a href="index.html" class="rounded-md px-2.5 py-2 text-slate-200 hover:bg-slate-800 hover:text-white md:px-3">HEM</a></li>
-          <li class="relative group">
-            <!-- Dropdown för Produkter (desktop); på mobil används snabblänkarna under menyn. -->
-            <a href="produkter.html" class="inline-flex items-center gap-1.5 rounded-md bg-white px-2.5 py-2 text-black md:px-3">PRODUKTER <svg class="h-3 w-3 opacity-80 transition group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.51a.75.75 0 01-1.08 0l-4.25-4.51a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg></a>
-            <ul class="hidden md:block invisible absolute left-0 top-full z-50 w-52 rounded-xl border border-emerald-700/40 bg-gradient-to-b from-emerald-900 to-emerald-950 p-1.5 opacity-0 shadow-2xl shadow-emerald-950/40 ring-1 ring-emerald-400/20 backdrop-blur-sm transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-              <li><a href="kepsar.html" class="block rounded-lg px-3 py-2 text-[0.78rem] tracking-wide text-emerald-100 hover:bg-emerald-700/40 hover:text-emerald-50">KEPSAR</a></li>
-              <li><a href="hoodies.html" class="block rounded-lg px-3 py-2 text-[0.78rem] tracking-wide text-emerald-100 hover:bg-emerald-700/40 hover:text-emerald-50">HOODIES</a></li>
+        <!-- Navigering byggd med flex + responsiva brytpunkter (md:...) från Tailwind. -->
+        <nav
+          aria-label="Huvudmeny"
+          class="col-span-2 md:col-span-1 md:col-start-1 md:row-start-1"
+        >
+          <div class="overflow-x-auto md:overflow-visible">
+            <ul
+              class="flex flex-nowrap items-center gap-1 whitespace-nowrap text-xs uppercase tracking-wide sm:text-sm md:gap-2"
+            >
+              <li>
+                <a
+                  href="index.html"
+                  class="rounded-md px-2.5 py-2 text-slate-200 hover:bg-slate-800 hover:text-white md:px-3"
+                  >HEM</a
+                >
+              </li>
+              <li class="relative group">
+                <!-- Dropdown för Produkter (desktop); på mobil används snabblänkarna under menyn. -->
+                <a
+                  href="produkter.html"
+                  class="inline-flex items-center gap-1.5 rounded-md bg-white px-2.5 py-2 text-black md:px-3"
+                  >PRODUKTER
+                  <svg
+                    class="h-3 w-3 opacity-80 transition group-hover:rotate-180"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.51a.75.75 0 01-1.08 0l-4.25-4.51a.75.75 0 01.02-1.06z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <ul
+                  class="hidden md:block invisible absolute left-0 top-full z-50 w-52 rounded-xl border border-emerald-700/40 bg-gradient-to-b from-emerald-900 to-emerald-950 p-1.5 opacity-0 shadow-2xl shadow-emerald-950/40 ring-1 ring-emerald-400/20 backdrop-blur-sm transition duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100"
+                >
+                  <li>
+                    <a
+                      href="kepsar.html"
+                      class="block rounded-lg px-3 py-2 text-[0.78rem] tracking-wide text-emerald-100 hover:bg-emerald-700/40 hover:text-emerald-50"
+                      >KEPSAR</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="hoodies.html"
+                      class="block rounded-lg px-3 py-2 text-[0.78rem] tracking-wide text-emerald-100 hover:bg-emerald-700/40 hover:text-emerald-50"
+                      >HOODIES</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="rounded-md px-2.5 py-2 text-slate-200 hover:bg-slate-800 hover:text-white md:px-3"
+                  >PRESENTKORT</a
+                >
+              </li>
+              <li>
+                <a
+                  href="kontakt.html"
+                  class="rounded-md px-2.5 py-2 text-slate-200 hover:bg-slate-800 hover:text-white md:px-3"
+                  >SUPPORT</a
+                >
+              </li>
             </ul>
+          </div>
+          <div
+            class="mt-2 flex gap-2 md:hidden"
+            role="group"
+            aria-label="Menyval produkter"
+          >
+            <a
+              href="kepsar.html"
+              class="rounded-md border border-emerald-600/40 bg-emerald-900/40 px-3 py-1.5 text-xs text-emerald-100 hover:bg-emerald-800/70 hover:text-emerald-50"
+              >KEPSAR</a
+            >
+            <a
+              href="hoodies.html"
+              class="rounded-md border border-emerald-600/40 bg-emerald-900/40 px-3 py-1.5 text-xs text-emerald-100 hover:bg-emerald-800/70 hover:text-emerald-50"
+              >HOODIES</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sidans huvudinnehåll -->
+    <main class="mx-auto max-w-6xl px-4 py-10">
+      <nav
+        aria-label="Brödsmulor"
+        class="mb-6"
+      >
+        <ol class="flex flex-wrap items-center gap-2 text-sm text-slate-500">
+          <li>
+            <a
+              href="index.html"
+              class="rounded-md px-2 py-1 transition hover:bg-slate-100 hover:text-slate-900"
+              >Hem</a
+            >
           </li>
-          <li><a href="#" class="rounded-md px-2.5 py-2 text-slate-200 hover:bg-slate-800 hover:text-white md:px-3">PRESENTKORT</a></li>
-          <li><a href="kontakt.html" class="rounded-md px-2.5 py-2 text-slate-200 hover:bg-slate-800 hover:text-white md:px-3">SUPPORT</a></li>
-        </ul>
-      </div>
-      <div class="mt-2 flex gap-2 md:hidden" role="group" aria-label="Menyval produkter">
-        <a href="kepsar.html" class="rounded-md border border-emerald-600/40 bg-emerald-900/40 px-3 py-1.5 text-xs text-emerald-100 hover:bg-emerald-800/70 hover:text-emerald-50">KEPSAR</a>
-        <a href="hoodies.html" class="rounded-md border border-emerald-600/40 bg-emerald-900/40 px-3 py-1.5 text-xs text-emerald-100 hover:bg-emerald-800/70 hover:text-emerald-50">HOODIES</a>
-      </div>
-    </nav>
-  </div>
-</header>
+          <li aria-hidden="true" class="text-slate-300">/</li>
+          <li
+            aria-current="page"
+            class="rounded-md bg-slate-900 px-2 py-1 font-medium text-white"
+          >
+            Produkter
+          </li>
+        </ol>
+      </nav>
 
-  <!-- Sidans huvudinnehåll -->
-  <main class="mx-auto max-w-6xl px-4 py-10">
-    <!-- Filterrad: formulärkomponent (select + label) kombinerat med flexibel layout. -->
-    <div class="mb-7 flex flex-wrap items-end justify-between gap-4">
-      <div>
-        <h1 class="text-3xl font-black">Alla produkter</h1>
-        <p class="text-sm text-slate-600">Exempel på produktgrid med cards, badges och knappar.</p>
-      </div>
-      <div class="flex items-center gap-2 text-sm">
-        <label for="sort" class="font-medium text-slate-600">Sortera:</label>
-        <select id="sort" class="rounded-md border border-slate-300 bg-white px-3 py-2">
-          <option>Nyast</option>
-          <option>Pris stigande</option>
-          <option>Pris fallande</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Produktgrid: card-komponenter med bilder, rubriker, priser och CTA-knappar. -->
-    <section class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      <h2 class="sr-only">Produktlista</h2>
-      <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-        <img src="images/keps-framsida.png" alt="Svart keps med grön logotyp" class="h-60 w-full object-contain" />
-        <div class="space-y-3 p-4">
-
-          <h2 class="text-lg font-bold">GOLF Keps</h2>
-          <p class="text-sm text-slate-600">Svart/Grön</p>
-          <p class="font-semibold">287 kr</p>
-          <button
-            class="w-full rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700">Bevaka
-            produkt</button>
+      <!-- Filterrad: formulärkomponent (select + label) kombinerat med flexibel layout. -->
+      <div class="mb-7 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h1 class="text-3xl font-black">Alla produkter</h1>
+          <p class="text-sm text-slate-600">
+            Exempel på produktgrid med cards, badges och knappar.
+          </p>
         </div>
-      </article>
-
-      <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-        <img src="images/hoodie-framsida.png" alt="Grön hoodie" class="h-60 w-full object-contain" />
-        <div class="space-y-3 p-4">
-          <h2 class="text-lg font-bold">COUNTRY CLUB Hoodie</h2>
-          <p class="text-sm text-slate-600">Grön</p>
-          <p class="font-semibold">580 kr</p>
-          <button
-            class="w-full rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-500">Lägg
-            i varukorg</button>
+        <div class="flex items-center gap-2 text-sm">
+          <label for="sort" class="font-medium text-slate-600">Sortera:</label>
+          <select
+            id="sort"
+            class="rounded-md border border-slate-300 bg-white px-3 py-2"
+          >
+            <option>Nyast</option>
+            <option>Pris stigande</option>
+            <option>Pris fallande</option>
+          </select>
         </div>
-      </article>
-
-      <article class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-        <img src="images/pike-framsida.png" alt="Vit piké med grön logotyp" class="h-60 w-full object-contain" />
-        <div class="space-y-3 p-4">
-          <h2 class="text-lg font-bold">COUNTRY CLUB Piké</h2>
-          <p class="text-sm text-slate-600">Vit</p>
-          <p class="font-semibold">451 kr</p>
-          <button
-            class="w-full rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-500">Lägg
-            i varukorg</button>
-        </div>
-      </article>
-    </section>
-  </main>
-
-    
-
-
-
-
-
-<!-- Gemensam footer med länkkolumner och nyhetsbrevsformulär. -->
-<footer class="mt-12 border-t border-slate-200 bg-[#f8f7f7] text-slate-900">
-  <div class="mx-auto max-w-7xl px-4 py-10 md:py-12">
-    <h2 class="sr-only">Footer</h2>
-    <!-- Footer-grid: länkkolumner + formulär visar fler ramverkskomponenter i samma layoutsystem. -->
-    <div class="grid gap-8 md:gap-10 lg:grid-cols-[1fr_1.6fr]">
-      <div class="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-3">
-        <nav>
-          <h3 class="mb-3 text-base font-bold text-slate-900">Allmänt</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-[#276a42]">Drop 1</a></li>
-            <li><a href="#" class="hover:text-[#276a42]">Kläder</a></li>
-            <li><a href="#" class="hover:text-[#276a42]">Accessoarer</a></li>
-            <li><a href="#" class="hover:text-[#276a42]">Presentkort</a></li>
-          </ul>
-        </nav>
-
-        <nav>
-          <h3 class="mb-3 text-base font-bold text-slate-900">Support</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-[#276a42]">Returer</a></li>
-            <li><a href="#" class="hover:text-[#276a42]">FAQs</a></li>
-            <li><a href="#" class="hover:text-[#276a42]">Storleksguide</a></li>
-            <li><a href="#" class="hover:text-[#276a42]">Kontakta Oss</a></li>
-          </ul>
-        </nav>
-
-        <nav>
-          <h3 class="mb-3 text-base font-bold text-slate-900">Socials</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a href="https://x.com/" target="_blank" rel="noopener noreferrer" class="hover:text-[#276a42]">X</a></li>
-            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="hover:text-[#276a42]">Instagram</a></li>
-            <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="hover:text-[#276a42]">TikTok</a></li>
-            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="hover:text-[#276a42]">YouTube</a></li>
-          </ul>
-        </nav>
       </div>
 
-      <!-- Nyhetsbrev: formulärkomponent med input och knapp, stylad med utility-klasser. -->
-      <section>
-      <h3 class="mb-3 text-3xl font-black uppercase tracking-[0.02em] text-slate-900 sm:text-[2rem]">Join The Club</h3>
-      <p class="mb-4 mt-2 text-sm text-slate-500">Gå med för uppdateringar om drops och kampanjer.</p>
-      <form action="#" method="post" class="grid w-full max-w-full grid-cols-[1fr_auto] items-center gap-2 rounded-[10px] border border-[#bdbfc4] bg-white p-[14px] sm:max-w-[520px]">
-        <input
-          id="newsletter-email"
-          name="email"
-          type="email"
-          placeholder="E-post"
-          autocomplete="email"
-          required
-          class="w-full border-0 bg-transparent px-0 py-0 text-sm text-slate-900 placeholder:text-[#3f424a] focus:outline-none"
-        />
-        <button type="submit" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-[#ececec] text-slate-900 hover:bg-[#e5e5e5]">
-          &gt;
-        </button>
-      </form>
+      <!-- Produktgrid: card-komponenter med bilder, rubriker, priser och CTA-knappar. -->
+      <section class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <h2 class="sr-only">Produktlista</h2>
+        <article
+          class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+        >
+          <img
+            src="images/keps-framsida.png"
+            alt="Svart keps med grön logotyp"
+            class="box-border block h-60 w-full object-contain p-4"
+          />
+          <div class="space-y-3 p-4">
+            <h2 class="text-lg font-bold">GOLF Keps</h2>
+            <p class="text-sm text-slate-600">Svart/Grön</p>
+            <p class="font-semibold">287 kr</p>
+            <button
+              class="w-full rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700"
+            >
+              Bevaka produkt
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+        >
+          <img
+            src="images/hoodie-framsida.png"
+            alt="Grön hoodie"
+            class="box-border block h-60 w-full object-contain p-4"
+          />
+          <div class="space-y-3 p-4">
+            <h2 class="text-lg font-bold">COUNTRY CLUB Hoodie</h2>
+            <p class="text-sm text-slate-600">Grön</p>
+            <p class="font-semibold">580 kr</p>
+            <button
+              class="w-full rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-500"
+            >
+              Lägg i varukorg
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+        >
+          <img
+            src="images/pike-framsida.png"
+            alt="Vit piké med grön logotyp"
+            class="box-border block h-60 w-full object-contain p-4"
+          />
+          <div class="space-y-3 p-4">
+            <h2 class="text-lg font-bold">COUNTRY CLUB Piké</h2>
+            <p class="text-sm text-slate-600">Vit</p>
+            <p class="font-semibold">451 kr</p>
+            <button
+              class="w-full rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-500"
+            >
+              Lägg i varukorg
+            </button>
+          </div>
+        </article>
       </section>
-    </div>
-  </div>
-</footer>
+    </main>
 
+    <!-- Gemensam footer med länkkolumner och nyhetsbrevsformulär. -->
+    <footer class="mt-12 border-t border-slate-200 bg-[#f8f7f7] text-slate-900">
+      <div class="mx-auto max-w-7xl px-4 py-10 md:py-12">
+        <h2 class="sr-only">Footer</h2>
+        <!-- Footer-grid: länkkolumner + formulär visar fler ramverkskomponenter i samma layoutsystem. -->
+        <div class="grid gap-8 md:gap-10 lg:grid-cols-[1fr_1.6fr]">
+          <div class="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-3">
+            <nav>
+              <h3 class="mb-3 text-base font-bold text-slate-900">Allmänt</h3>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-[#276a42]">Drop 1</a></li>
+                <li><a href="#" class="hover:text-[#276a42]">Kläder</a></li>
+                <li>
+                  <a href="#" class="hover:text-[#276a42]">Accessoarer</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-[#276a42]">Presentkort</a>
+                </li>
+              </ul>
+            </nav>
 
-</body>
+            <nav>
+              <h3 class="mb-3 text-base font-bold text-slate-900">Support</h3>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-[#276a42]">Returer</a></li>
+                <li><a href="#" class="hover:text-[#276a42]">FAQs</a></li>
+                <li>
+                  <a href="#" class="hover:text-[#276a42]">Storleksguide</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-[#276a42]">Kontakta Oss</a>
+                </li>
+              </ul>
+            </nav>
 
+            <nav>
+              <h3 class="mb-3 text-base font-bold text-slate-900">Socials</h3>
+              <ul class="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="https://x.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-[#276a42]"
+                    >X</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-[#276a42]"
+                    >Instagram</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-[#276a42]"
+                    >TikTok</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-[#276a42]"
+                    >YouTube</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Nyhetsbrev: formulärkomponent med input och knapp, stylad med utility-klasser. -->
+          <section>
+            <h3
+              class="mb-3 text-3xl font-black uppercase tracking-[0.02em] text-slate-900 sm:text-[2rem]"
+            >
+              Join The Club
+            </h3>
+            <p class="mb-4 mt-2 text-sm text-slate-500">
+              Gå med för uppdateringar om drops och kampanjer.
+            </p>
+            <form
+              action="#"
+              method="post"
+              class="grid w-full max-w-full grid-cols-[1fr_auto] items-center gap-2 rounded-[10px] border border-[#bdbfc4] bg-white p-[14px] sm:max-w-[520px]"
+            >
+              <input
+                name="email"
+                type="email"
+                placeholder="E-post"
+                autocomplete="email"
+                aria-label="E-post för nyhetsbrev"
+                required
+                class="w-full border-0 bg-transparent px-0 py-0 text-sm text-slate-900 placeholder:text-[#3f424a] focus:outline-none"
+              />
+              <button
+                type="submit"
+                class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-[#ececec] text-slate-900 hover:bg-[#e5e5e5]"
+              >
+                &gt;
+              </button>
+            </form>
+          </section>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
